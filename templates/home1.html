@@ -1,0 +1,364 @@
+{% load markdown_extras %}
+
+{% get_categories as category_list %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Home</title>
+    <style>
+        /**
+        * index.scss
+        * - Add any styles you want here!
+        */
+       
+body {
+    background: #F1F3F6 !important;
+}
+/* main-header start */
+[data-target="#mainMenu"] {
+    position: absolute;
+    z-index: 999;
+}
+
+#mainMenu li > a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.main-header.fixed-nav #mainMenu li > a {
+    color: #047BD5;
+    text-decoration: none;
+}
+
+#mainMenu li:not(:last-of-type) {
+    margin-right: 30px;
+}
+
+#mainMenu li > a::before {
+    position: absolute;
+    content: "";
+    width: calc(100% - 1px);
+    height: 1px;
+    background: #fff;
+    bottom: -6px;
+    left: 0;
+
+    -webkit-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+    z-index: -1;
+
+    -webkit-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+#mainMenu li > a:hover::before,
+#mainMenu li > a.active::before {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.main-header.fixed-nav #mainMenu li > a::before {
+    background: #000;
+}
+
+.main-header {
+    top: 25px;
+    left: 0;
+    background: #047BD5;
+    z-index: 99;
+    width: 100%;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.main-header.fixed-nav {
+    top: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.09);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.main-header.fixed-nav .navbar-brand > img:last-of-type {
+    display: block;
+}
+
+.main-header.fixed-nav .navbar-brand > img:first-of-type {
+    display: none;
+}
+.navbar-brand {
+    color: #fff;
+}
+.main-header .navbar-brand img {
+    max-width: 40px;
+    animation: fadeInLeft 0.4s both 0.4s;
+}
+/* main-header end */
+@media (max-width: 991px) {
+    /*header starts*/
+    .collapse.in {
+    display: block !important;
+    padding: 0;
+    clear: both;
+    }
+
+    .navbar-toggler {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    border: none;
+    border-radius: 0;
+    outline: none !important;
+    }
+
+    .main-header .navbar {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    }
+
+    .main-header .navbar-nav {
+    margin-top: 70px;
+    }
+
+    .main-header .navbar-nav li .nav-link {
+    text-align: center;
+    padding: 20px 15px;
+    border-radius: 0px;
+    }
+
+    /**/
+    .main-header .navbar-toggler .icon-bar {
+    background-color: #fff;
+    margin: 0 auto 6px;
+    border-radius: 0;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    right: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    }
+
+    .main-header .navbar .navbar-toggler .icon-bar:first-child {
+    margin-top: 3px;
+    }
+
+    .main-header .navbar-toggler .icon-bar-1 {
+    width: 10px;
+    top: 0px;
+    }
+
+    .main-header .navbar-toggler .icon-bar-2 {
+    width: 16px;
+    top: 12px;
+    }
+
+    .main-header .navbar-toggler .icon-bar-3 {
+    width: 20px;
+    top: 21px;
+    }
+
+    .main-header .current .icon-bar {
+    margin-bottom: 5px;
+    border-radius: 0;
+    display: block;
+    }
+
+    .main-header .current .icon-bar-1 {
+    width: 18px;
+    }
+
+    .main-header .current .icon-bar-2 {
+    width: 30px;
+    }
+
+    .main-header .current .icon-bar-3 {
+    width: 10px;
+    }
+
+    .main-header .navbar-toggler:hover .icon-bar {
+    background-color: #fff;
+    }
+
+    .main-header .navbar-toggler:focus .icon-bar {
+    background-color: #fff;
+    }
+
+    /*header ends*/
+}
+.hero-section-5{
+    position:relative;
+    background: #F1F3F6;
+}
+.hero-section-5{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.hero-content-5 p{
+    font-size: 16px !important;
+    Line-height: 1.75rem;
+}
+.hero-content-5 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+.hero-content-5{max-width:520px}@media only screen and (min-width:768px) and (max-width:991px),only screen and (max-width:767px){.hero-content-5{padding-top:80px}}.hero-content-5 .title{font-size:54px;line-height:72px;color:#1b2336;font-weight:700;padding-top:20px}@media only screen and (min-width:992px) and (max-width:1199px){.hero-content-5 .title{font-size:48px;line-height:62px}}@media only screen and (max-width:575px){.hero-content-5 .title{font-size:32px;line-height:40px}}.hero-content-5 .title span{color:#ff854c}.features-5-wrapper{margin-top:-30px}
+.card{
+    margin-left:10px;
+}
+.container{
+    wid
+}
+.row{
+    width:100%;
+}
+.brand-heading{
+	color: #F8E831;
+	font-style: Bold;
+}
+
+</style>
+  </head>
+  <body>
+<div class="containermain">
+<header class="main-header">
+        <div class="container">
+        <nav class="navbar navbar-expand-lg main-nav px-0">
+            <a class="navbar-brand" href="/">
+                        <h3 class="brand-heading">Allquestionpaper.com</h3>
+                            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar icon-bar-1"></span>
+                            <span class="icon-bar icon-bar-2"></span>
+                            <span class="icon-bar icon-bar-3"></span>
+                        </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ml-auto text-uppercase f1">
+                <li>
+                <a href="#home" class="active active-first">home</a>
+                </li>
+                <li>
+                <a href="#about">about us</a>
+                </li>
+                <li>
+                <a href="#service">services</a>
+                </li>
+                <li>
+                <a href="#project">projects</a>
+                </li>
+                <li>
+                <a href="#team">team</a>
+                </li>
+                <li>
+                <a href="#testimony">testimonils</a>
+                </li>
+                <li>
+                <a href="#contact">contact</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        </div>
+        <!-- /.container -->
+          <!-- Hero Start -->
+  <div class="hero-section-5 section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6">
+                <!-- Hero Content Start -->
+                <div class="hero-content-5">
+                  <div class="title homepage-typeeriter">Complete Guide For CBSE <span class="typewrite" data-period="2000" data-type='[ "Students.", "Teachers.", "Parents."]'>
+                      <span class="wrap"></span>
+                    </span></div>
+
+                  <p>Learning App for CBSE students and Test Generator for teachers to create question papers in minutes.</p>
+                  <div>
+                        <a style="border-radius: 4px" class="btn btn-success" href="/course/">Start Now</a>
+                    <a style="border-radius: 4px" class="btn btn-warning" target="_blank"
+                        href="https://play.google.com/store/apps/details?id=in.techchefs.MyCBSEGuide&referrer=utm_source%3Dmycbseguide_home_banner_top%26utm_medium%3Dbutton%26utm_campaign%3Dhome">
+                       Install App</a>
+                    </div>
+                </div>
+                <!-- Hero Content End -->
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <!-- Hero Image Start -->
+                <div>
+                    <div class="image">
+                        <img src="https://media-mycbseguide.s3.amazonaws.com/images/direct/home_top.png" alt="">
+                    </div>
+                </div>
+                <!-- Hero Image End -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</header>
+
+                <!-- Section Title End -->
+    
+    <div class="container my-4">
+        <h2> Categories </h2>
+        <div class="row">
+            {% for category in category_list %}
+            <div class="col-lg-3 col-md-6 col-6 col-sm-6 my-2" >
+                
+                <div class="card-img" style="text-align: center; background-color: #856640; padding: 10px;">
+                    <img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/18289de2eebb6654.png?q=100" >
+                </div>
+                
+                <div class="card-content text-center" style="border-width:0.01em; border-style:solid; border-color: #C8C8C8;">
+                    <strong><p style="font-size:13px; ">{{ category.title }}</p></strong>
+                    <a href="{% url 'postlist' category.slug %}" class="btn btn-sm" style=" margin-bottom:5%; color:#fff; background-color :#0C73EB; ">Go somewhere</a>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+        
+        
+</div>
+
+
+
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
